@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dndijkbu6kmrt"]
+
+[ext_resource type="Script" uid="uid://ieqfw76u2c8q" path="res://scene objects/m&p scene objects/M&P Minigame/ingredient_ball.gd" id="1_sli4w"]
+
+[node name="IngredientBall" type="RigidBody2D" unique_id=932391481 node_paths=PackedStringArray("split_markers", "polygon", "collision_polygon", "collision_area")]
+mass = 0.1
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_sli4w")
+split_limit = 3
+min_split_vel = 130.0
+split_markers = [NodePath("SplitSpawn1"), NodePath("SplitSpawn2")]
+split_scale = 0.5
+polygon = NodePath("Polygon2D")
+collision_polygon = NodePath("CollisionPolygon2D")
+collision_area = NodePath("Area2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=539219241]
+color = Color(1, 0.24705882, 1, 1)
+polygon = PackedVector2Array(1, -62, 41, -47, 62, -3, 51, 47, 23, 63, -24, 63, -53, 38, -62, -2, -39, -45)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1771965529]
+polygon = PackedVector2Array(1, -62, 41, -46, 60, -5, 50, 46, 24, 63, -22, 65, -53, 38, -63, 1, -39, -45)
+
+[node name="SplitSpawn1" type="Marker2D" parent="." unique_id=155698116]
+position = Vector2(35, 0)
+
+[node name="SplitSpawn2" type="Marker2D" parent="." unique_id=353849214]
+position = Vector2(-27, -1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1280359596]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=627943924]
+polygon = PackedVector2Array(0, -68, 46, -50, 66, -8, 59, 50, 25, 69, -23, 72, -57, 41, -67, 2, -44, -48)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
