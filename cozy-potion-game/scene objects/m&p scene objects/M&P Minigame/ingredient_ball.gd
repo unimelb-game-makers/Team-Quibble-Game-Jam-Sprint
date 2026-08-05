@@ -19,6 +19,7 @@ var internal_scale = 1
 @export var polygon: Polygon2D
 @export var collision_polygon: CollisionPolygon2D
 @export var collision_area: Area2D
+@export var texture: Control
 
 
 
@@ -37,11 +38,13 @@ func split():
 
 #update the internal scale of the rigidbody and scale all of its children
 #to match. the markers are also moved inward
+#oh my god this is so bad
 func set_internal_scale(new_scale: float):
 	internal_scale = new_scale
 	polygon.scale = Vector2.ONE * internal_scale
 	collision_polygon.scale = Vector2.ONE * internal_scale
 	collision_area.scale = Vector2.ONE * internal_scale
+	texture.scale = Vector2.ONE * internal_scale
 	for marker in split_markers:
 		marker.position *= new_scale
 	
