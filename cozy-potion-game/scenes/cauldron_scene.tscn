@@ -50,7 +50,7 @@ size_flags_vertical = 8
 
 [node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/QuestContainer/QuestList" unique_id=637012560]
 layout_mode = 2
-text = "Implement Quests lol"
+text = "Get To $2000"
 
 [node name="RecipeContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1113074650]
 custom_minimum_size = Vector2(175, 250)
