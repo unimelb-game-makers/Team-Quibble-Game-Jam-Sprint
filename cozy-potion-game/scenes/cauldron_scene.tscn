@@ -6,10 +6,12 @@
 
 [node name="CauldronScene" type="Node2D" unique_id=934424114]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1608703175 node_paths=PackedStringArray("label_money_counter", "container_recipe_list")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1608703175 node_paths=PackedStringArray("potion_brewer", "label_money_counter", "container_recipe_list", "reset_button")]
 script = ExtResource("1_c2v7o")
+potion_brewer = NodePath("../PotionBrewing")
 label_money_counter = NodePath("MarginContainer/LabelPlayerMoney")
 container_recipe_list = NodePath("MarginContainer/RecipeContainer/RecipeList")
+reset_button = NodePath("MarginContainer/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=884297072]
 custom_minimum_size = Vector2(10, 10)
@@ -75,6 +77,12 @@ alignment = 2
 layout_mode = 2
 text = "CurrentPotion"
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer" unique_id=1774481802]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Reset Potion"
 
 [node name="CauldronPlaceholder" type="Sprite2D" parent="." unique_id=948128405]
 position = Vector2(581, 528)
