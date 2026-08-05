@@ -6,10 +6,10 @@
         "healing"     : 10.0,
         "energy"      : 1.0,
         "cure_disease": 1.0,
-        "poison"      : 1.0,
+        "poison"      : 2.0,
 
-        "instant"     : 5.0,
-        "overtime"    : 2.0
+        "instant"     : 2.0,
+        "overtime"    : 1.0
     },
 
     {
@@ -18,7 +18,7 @@
         "healing"     : 9.0,
         "energy"      : 11.0,
         "cure_disease": 1.0,
-        "poison"      : 1.0,
+        "poison"      : 2.0,
 
         "instant"     : 2.0,
         "overtime"    : 3.0
@@ -32,20 +32,31 @@
         "cure_disease": 4.0,
         "poison"      : 1.0,
 
-        "instant"     : 10.0,
+        "instant"     : 2.0,
         "overtime"    : 5.0
     },
 
     {
         "name" : "Winter Lilly",
         
-        "healing"     : 4.0,
-        "energy"      : 9.0,
+        "healing"     : 1.0,
+        "energy"      : 1.0,
         "cure_disease": 10.0,
         "poison"      : 9.0,
 
         "instant"     : 7.0,
         "overtime"    : 1.0
+    },
+    {
+        "name" : "Fey Moss",
+        
+        "healing"     : 1.0,
+        "energy"      : 1.0,
+        "cure_disease": 1.0,
+        "poison"      : 5.0,
+
+        "instant"     : 15.0,
+        "overtime"    : 15.0
     }
     ]
 }
