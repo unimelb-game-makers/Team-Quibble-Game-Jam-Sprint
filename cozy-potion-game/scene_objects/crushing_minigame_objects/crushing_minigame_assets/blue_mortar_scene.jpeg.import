@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcoqip3k17f5"
-path="res://.godot/imported/Ginger.jpeg-4a8489446476042894be81a8bc44ada3.ctex"
+uid="uid://ctv72nx3uvy8c"
+path="res://.godot/imported/blue_mortar_scene.jpeg-4ae9196c8d4972a54cddb556f5379c73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene objects/m&p scene objects/M&P Minigame/Assets/Ginger.jpeg"
-dest_files=["res://.godot/imported/Ginger.jpeg-4a8489446476042894be81a8bc44ada3.ctex"]
+source_file="res://scene_objects/crushing_minigame_objects/crushing_minigame_assets/blue_mortar_scene.jpeg"
+dest_files=["res://.godot/imported/blue_mortar_scene.jpeg-4ae9196c8d4972a54cddb556f5379c73.ctex"]
 
 [params]
 

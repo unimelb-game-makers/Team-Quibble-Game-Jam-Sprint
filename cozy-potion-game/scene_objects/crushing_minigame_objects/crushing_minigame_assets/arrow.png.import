@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw2c1lwuqh461"
-path="res://.godot/imported/arrow.png-64caba3c913c028b0d3ae6f82dd55af6.ctex"
+path="res://.godot/imported/arrow.png-6e917b10f3b93e4ef252468e60a58811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene objects/m&p scene objects/M&P Minigame/Assets/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-64caba3c913c028b0d3ae6f82dd55af6.ctex"]
+source_file="res://scene_objects/crushing_minigame_objects/crushing_minigame_assets/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-6e917b10f3b93e4ef252468e60a58811.ctex"]
 
 [params]
 

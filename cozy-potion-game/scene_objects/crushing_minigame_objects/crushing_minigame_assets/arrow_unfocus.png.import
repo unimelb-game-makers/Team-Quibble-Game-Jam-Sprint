@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uepnxtqkou3g"
-path="res://.godot/imported/arrowunfocus.png-0a4372a515325693e19c970e520a224a.ctex"
+path="res://.godot/imported/arrow_unfocus.png-47ebb3794dca79afdb5827ac1b78b645.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene objects/m&p scene objects/M&P Minigame/Assets/arrowunfocus.png"
-dest_files=["res://.godot/imported/arrowunfocus.png-0a4372a515325693e19c970e520a224a.ctex"]
+source_file="res://scene_objects/crushing_minigame_objects/crushing_minigame_assets/arrow_unfocus.png"
+dest_files=["res://.godot/imported/arrow_unfocus.png-47ebb3794dca79afdb5827ac1b78b645.ctex"]
 
 [params]
 

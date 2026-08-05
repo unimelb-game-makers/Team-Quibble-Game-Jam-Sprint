@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crp0882kh1uwn"
-path="res://.godot/imported/Mortar_Better-removebg-preview.png-bf337be694e0970ca12cc350ed94420b.ctex"
+uid="uid://bcoqip3k17f5"
+path="res://.godot/imported/ginger.jpeg-1edfae2faad454a1aa2c788a9fd067f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene objects/m&p scene objects/M&P Minigame/Assets/Mortar_Better-removebg-preview.png"
-dest_files=["res://.godot/imported/Mortar_Better-removebg-preview.png-bf337be694e0970ca12cc350ed94420b.ctex"]
+source_file="res://scene_objects/crushing_minigame_objects/crushing_minigame_assets/ginger.jpeg"
+dest_files=["res://.godot/imported/ginger.jpeg-1edfae2faad454a1aa2c788a9fd067f6.ctex"]
 
 [params]
 
