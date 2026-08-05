@@ -16,7 +16,7 @@ enum {
 var name: String = "Inert Potion"
 var value: int = 0
 
-
+# finds which of the entries is the highest
 static func get_max(_potion_effects: Dictionary[String, float]) -> String:
 	var winner := ""
 	
@@ -30,7 +30,8 @@ static func get_max(_potion_effects: Dictionary[String, float]) -> String:
 			
 	return winner
 
-# Incase we want a way to get a potion's value without having one created
+# totals the values.
+# this is static incase we want a way to get a potion's value without having one created
 static func get_value(_potion_effects: Dictionary[String, float]) -> float:
 	
 	var best_effect = get_max(_potion_effects)

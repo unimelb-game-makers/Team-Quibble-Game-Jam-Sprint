@@ -5,30 +5,25 @@ var potion_ingredient_index: Dictionary[String, PotionIngredient]
 var json_path: String = "res://scripts/potion_crafting/potion_list.json"
 var placeholder: Texture = preload("res://icon.svg")
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	read_json_data()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func attempt_brewing(_potion_recipe: Array[PotionIngredient]) -> Potion:
 	# Unless something else broke, this method shouldn't get a recipe bigger than 3 ingredients
 	assert(_potion_recipe.size() <= 3 and _potion_recipe.size() > 0,
 			"Attempted to brew a potion with more than 3 ingredients")
 
-	# This could be moved to the potion.gd constructor
+	# this could probably be moved to the potion.gd constructor
 	var index := 1
 	var potion := Potion.new()
 
-	# Things kept changing the resources
+	# things kept unintendedly changing the resources. access modifers would sure be nice.
 	var effect_score := _potion_recipe[0].effects.duplicate()
 	var type_score := _potion_recipe[0].type.duplicate()
 	
 	var effect_sum: float = effect_score.values().reduce(PotionIngredient.sum, 0)
 
+	# modify the scores based on the other ingredients
 	while true:
 		if _potion_recipe.size() <= index:
 			break
@@ -41,10 +36,11 @@ func attempt_brewing(_potion_recipe: Array[PotionIngredient]) -> Potion:
 		
 		index += 1
 
-	var potion_afinity: String = Potion.get_max(effect_score)
+	# get the strongest from each
+	var potion_effect: String = Potion.get_max(effect_score)
 	var potion_type: String = Potion.get_max(type_score)
 
-	potion.name = "Potion of %s %s" % [potion_type, potion_afinity]
+	potion.name = "Potion of %s %s" % [potion_type, potion_effect]
 	potion.value = Potion.get_value(effect_score) + type_score[potion_type]
 
 	return potion
