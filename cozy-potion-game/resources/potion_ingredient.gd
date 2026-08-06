@@ -10,12 +10,12 @@ extends Resource
 	set(val): healing = val ; effects["healing"] = val 
 
 @export var energy: float = 0.0 :
-	get: return poison 
-	set(val): poison = val ; effects["poison"] = val 
+	get: return energy 
+	set(val): energy = val ; effects["energy"] = val 
 
 @export var cure_disease: float = 0.0 :
 	get: return poison 
-	set(val): poison = val ; effects["poison"] = val 
+	set(val): cure_disease = val ; effects["cure_disease"] = val 
 
 @export var poison: float = 0.0 : 
 	get: return poison 
