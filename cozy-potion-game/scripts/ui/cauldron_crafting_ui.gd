@@ -61,6 +61,7 @@ func create_potion() -> void:
 	potion_created_container.show()
 	potion_created_name_label.text = "You made a %s!" % created_potion.name
 	potion_created_value_label.text = "(which you can sell for $%d.)" % created_potion.value
+	
 	reset_potion()
 
 
@@ -75,7 +76,7 @@ func _on_potion_created_container_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		potion_created_container.hide()
 
-func update_quest_text(money: int):
+func update_quest_text(money: int) -> void:
 	if money >= quest_amount:
 		quest_amount *= 2
 	quest_label.text = "Get to $%d" % quest_amount
