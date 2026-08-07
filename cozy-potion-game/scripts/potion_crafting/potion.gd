@@ -16,7 +16,7 @@ enum {
 var name: String = "Inert Potion"
 var value: int = 0
 
-# finds which of the entries is the highest
+# finds which of the entries is the highest and returns it
 static func get_max(_potion_effects: Dictionary[String, float]) -> String:
 	var winner := ""
 	
@@ -40,7 +40,8 @@ static func get_value(_potion_effects: Dictionary[String, float]) -> float:
 	for opposing_effect in _potion_effects:
 		if opposing_effect == best_effect:
 			continue
-
-		potion_value += _potion_effects[best_effect] - _potion_effects[opposing_effect]
+		# reduces a potions value based on the conflicting effects. this is to make certain
+		# ingredients more desireable when trying to make combinations
+		potion_value += _potion_effects[best_effect] - _potion_effects[opposing_effect] 
 
 	return potion_value
