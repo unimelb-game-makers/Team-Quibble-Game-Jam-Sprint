@@ -5,6 +5,9 @@ extends CanvasLayer
 @export var container_recipe_list: VBoxContainer
 @export var reset_button: Button
 @export var make_button: Button
+@export var potion_created_container: PanelContainer
+@export var potion_created_name_label: Label
+@export var potion_created_value_label: Label
 
 var player_money: int = 0 :
 	get:
