@@ -5,6 +5,10 @@ extends CanvasLayer
 @export var container_recipe_list: VBoxContainer
 @export var reset_button: Button
 @export var make_button: Button
+@export var quest_label: Label
+@export var potion_created_container: PanelContainer
+@export var potion_created_name_label: Label
+@export var potion_created_value_label: Label
 
 var player_money: int = 0 :
 	get:
@@ -12,9 +16,13 @@ var player_money: int = 0 :
 	set(_value):
 		player_money = _value
 		label_money_counter.text = "$%s" % player_money
+		money_changed.emit(_value)
 
 var current_potion: Array[PotionIngredient]
 var ingredient_button: PackedScene = preload("uid://b6r6ktehhfb10")
+var quest_amount: int = 100
+
+signal money_changed(new_value: int)
 
 func _ready() -> void:
 	player_money = 0
@@ -22,6 +30,8 @@ func _ready() -> void:
 
 	reset_button.pressed.connect(reset_potion)
 	make_button.pressed.connect(create_potion)
+	potion_created_container.gui_input.connect(_on_potion_created_container_gui_input)
+	money_changed.connect(update_quest_text)
 
 	for entry in potion_brewer.potion_ingredient_index.values():
 		var ingredient: Button = ingredient_button.instantiate()
@@ -46,14 +56,27 @@ func create_potion() -> void:
 		return
 
 	var created_potion := potion_brewer.attempt_brewing(current_potion)
-	print("made potion: ", created_potion.name)
-	print("value: ", created_potion.value)
 	player_money += created_potion.value
 
+	potion_created_container.show()
+	potion_created_name_label.text = "You made a %s!" % created_potion.name
+	potion_created_value_label.text = "(which you can sell for $%d.)" % created_potion.value
+	
 	reset_potion()
+
 
 func reset_potion() -> void:
 	current_potion.clear()
 
 	for button: Button in container_recipe_list.get_children():
 		button.disabled = false
+
+#well, this is a bit wordy. Descriptive though!
+func _on_potion_created_container_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		potion_created_container.hide()
+
+func update_quest_text(money: int) -> void:
+	if money >= quest_amount:
+		quest_amount *= 2
+	quest_label.text = "Get to $%d" % quest_amount
