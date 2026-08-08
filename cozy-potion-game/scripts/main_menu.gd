@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	# TODO
-	main_scene.switch_scene(self, null)
+	main_scene.switch_scene(self, minigame_packed_scenes[0].instantiate())
 
 
 func _on_test_button_item_selected(_index: int) -> void:
